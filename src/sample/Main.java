@@ -6,7 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * @author Colby Nicoletti
+ * @brief
+ */
+
+
 public class Main extends Application {
+
+    /**
+     * The starting point of the program.
+      * @param primaryStage the first thing a user sees.
+     * @throws Exception
+     */
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -14,7 +26,6 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
-        //comment
     }
 
 
