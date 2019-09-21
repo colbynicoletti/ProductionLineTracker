@@ -36,6 +36,10 @@ public class Main extends Application {
 
 
   public static void main(String[] args) {
+    /**
+     * @author Colby Nicoletti
+     * The code below connects the database to the code.
+     */
     final String JDBC_DRIVER = "org.h2.Driver";
     final String DB_URL = "jdbc:h2:./res/ProductDB";
 

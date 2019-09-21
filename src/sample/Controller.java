@@ -34,11 +34,19 @@ public class Controller {
   @FXML
   private TextArea ta_productionLog;
 
+  /**
+   * @param event The method below controls the code for the button when pressed.
+   * @author Colby Nicoletti
+   */
   @FXML
   void addProduct(MouseEvent event) {
     System.out.println("\"Add Product\" Button has been clicked.");
   }
 
+  /**
+   * @param event This method below controls the code for the button when pressed.
+   * @author Colby Nicoletti
+   */
   @FXML
   void recordProduction(MouseEvent event) {
     System.out.println("\"Record Production\" Button has been clicked.");
@@ -47,6 +55,11 @@ public class Controller {
   public void chooseQuantity(MouseEvent mouseEvent) {
   }
 
+  /**
+   * @author Colby Nicoletti The code below controls adding the options into the combo box and
+   * allows it to be editable. It also selects the first option and places that in the combo box
+   * when run.
+   */
   @FXML
   public void initialize() {
     cb_chooseQuantity.setEditable(true);
