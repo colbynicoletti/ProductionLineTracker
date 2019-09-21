@@ -23,10 +23,10 @@ public class Controller {
   private Button btn_addProduct;
 
   @FXML
-  private ListView<?> lv_chooseProduct;
+  private ListView<String> lv_chooseProduct;
 
   @FXML
-  private ComboBox<?> cb_chooseQuantity;
+  private ComboBox<Integer> cb_chooseQuantity;
 
   @FXML
   private Button btn_recordProduction;
@@ -44,4 +44,22 @@ public class Controller {
     System.out.println("\"Record Production\" Button has been clicked.");
   }
 
+  public void chooseQuantity(MouseEvent mouseEvent) {
+  }
+
+  @FXML
+  public void initialize() {
+    cb_chooseQuantity.setEditable(true);
+    cb_chooseQuantity.getItems().add(1);
+    cb_chooseQuantity.getItems().add(2);
+    cb_chooseQuantity.getItems().add(3);
+    cb_chooseQuantity.getItems().add(4);
+    cb_chooseQuantity.getItems().add(5);
+    cb_chooseQuantity.getItems().add(6);
+    cb_chooseQuantity.getItems().add(7);
+    cb_chooseQuantity.getItems().add(8);
+    cb_chooseQuantity.getItems().add(9);
+    cb_chooseQuantity.getItems().add(10);
+    cb_chooseQuantity.getSelectionModel().selectFirst();
+  }
 }

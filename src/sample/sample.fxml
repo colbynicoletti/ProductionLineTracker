@@ -59,7 +59,7 @@
                   <ListView fx:id="lv_chooseProduct" layoutX="14.0" layoutY="38.0" prefHeight="123.0" prefWidth="567.0" />
                   <Label layoutX="23.0" layoutY="14.0" text="Choose Product" />
                   <Label layoutX="23.0" layoutY="176.0" text="Choose Quantity" />
-                  <ComboBox fx:id="cb_chooseQuantity" layoutX="23.0" layoutY="197.0" prefHeight="31.0" prefWidth="548.0" />
+                  <ComboBox fx:id="cb_chooseQuantity" layoutX="23.0" layoutY="197.0" onMouseClicked="#chooseQuantity" prefHeight="31.0" prefWidth="548.0" />
                   <Button fx:id="btn_recordProduction" layoutX="23.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#recordProduction" text="Record Production" />
                </children></AnchorPane>
       </content>
