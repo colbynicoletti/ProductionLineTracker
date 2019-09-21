@@ -48,14 +48,15 @@ public class Main extends Application {
       Class.forName(JDBC_DRIVER);
       conn = DriverManager.getConnection(DB_URL, USER, PASS);
       stmt = conn.createStatement();
+      System.out.println("Database connection established.");
 
-      //type the sql stuff here
-
+      //type the sql stuff here and uncomment code below
+      /*
       ResultSet rs = stmt.executeQuery(sql);
       while (rs.next()) {
         System.out.println(rs.getString(1));
       }
-
+      */
       // STEP 4: Clean-up environment
       stmt.close();
       conn.close();
