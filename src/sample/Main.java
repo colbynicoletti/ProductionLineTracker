@@ -54,7 +54,7 @@ public class Main extends Application {
       stmt = conn.createStatement();
       System.out.println("Database connection established.");
 
-      //type the sql stuff here and uncomment code below
+      //type the  sql stuff here and uncomment code below
       /*
       ResultSet rs = stmt.executeQuery(sql);
       while (rs.next()) {
