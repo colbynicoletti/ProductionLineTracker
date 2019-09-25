@@ -2,6 +2,7 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -34,13 +35,21 @@ public class Controller {
   @FXML
   private TextArea ta_productionLog;
 
+  @FXML
+  private ChoiceBox<String> cb_itemType;
+
   /**
    * @param event The method below controls the code for the button when pressed.
    * @author Colby Nicoletti
    */
   @FXML
   void addProduct(MouseEvent event) {
-    System.out.println("\"Add Product\" Button has been clicked.");
+    String productName = tf_productName.getText();
+    String manufacturer = tf_manufacturer.getText();
+    String sql =
+        "INSERT INTO Product(type, manufacturer, name) VALUES ('AUDIO', '" + manufacturer + "', '"
+            + productName + "')";
+    Main.executeSql(sql);
   }
 
   /**
@@ -62,6 +71,7 @@ public class Controller {
    */
   @FXML
   public void initialize() {
+    //Adds 1-10 to Combo Box called Choose Quantity
     cb_chooseQuantity.setEditable(true);
     cb_chooseQuantity.getItems().add(1);
     cb_chooseQuantity.getItems().add(2);

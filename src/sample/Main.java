@@ -25,6 +25,8 @@ public class Main extends Application {
    * @param primaryStage the first thing a user sees.
    * @throws Exception
    */
+   static Statement stmt = null;
+
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -33,7 +35,6 @@ public class Main extends Application {
     primaryStage.setScene(new Scene(root, 300, 275));
     primaryStage.show();
   }
-
 
   public static void main(String[] args) {
     /**
@@ -46,7 +47,6 @@ public class Main extends Application {
     final String USER = "";
     final String PASS = "";
     Connection conn = null;
-    Statement stmt = null;
 
     try {
       Class.forName(JDBC_DRIVER);
@@ -54,16 +54,6 @@ public class Main extends Application {
       stmt = conn.createStatement();
       System.out.println("Database connection established.");
 
-      //type the  sql stuff here and uncomment code below
-      /*
-      ResultSet rs = stmt.executeQuery(sql);
-      while (rs.next()) {
-        System.out.println(rs.getString(1));
-      }
-      */
-      // STEP 4: Clean-up environment
-      stmt.close();
-      conn.close();
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
 
@@ -72,5 +62,13 @@ public class Main extends Application {
     }
 
     launch(args);
+  }
+
+  public static void executeSql(String sql){
+    try {
+      stmt.executeUpdate(sql);
+    }catch(Exception e){
+      e.printStackTrace();
+    }
   }
 }
