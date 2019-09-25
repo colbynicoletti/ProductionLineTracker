@@ -25,7 +25,7 @@ public class Main extends Application {
    * @param primaryStage the first thing a user sees.
    * @throws Exception
    */
-   static Statement stmt = null;
+  static Statement stmt = null;
 
 
   @Override
@@ -64,10 +64,10 @@ public class Main extends Application {
     launch(args);
   }
 
-  public static void executeSql(String sql){
+  public static void executeSql(String sql) {
     try {
       stmt.executeUpdate(sql);
-    }catch(Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
