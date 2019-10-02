@@ -9,16 +9,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-public class Controller {
+public class Controller{
 
   @FXML
   private TextField tf_productName;
 
   @FXML
   private TextField tf_manufacturer;
-
-  @FXML
-  private TextField tf_itemType;
 
   @FXML
   private Button btn_addProduct;
@@ -46,10 +43,14 @@ public class Controller {
   void addProduct(MouseEvent event) {
     String productName = tf_productName.getText();
     String manufacturer = tf_manufacturer.getText();
+    String itemType = cb_itemType.getValue();
     String sql =
-        "INSERT INTO Product(type, manufacturer, name) VALUES ('AUDIO', '" + manufacturer + "', '"
+        "INSERT INTO Product(type, manufacturer, name) VALUES ('" + itemType + "', '" + manufacturer + "', '"
             + productName + "')";
     Main.executeSql(sql);
+
+   Product testProduct = new Widget("iPod", "Apple", "AM");
+    System.out.println(testProduct.toString());
   }
 
   /**
@@ -84,5 +85,18 @@ public class Controller {
     cb_chooseQuantity.getItems().add(9);
     cb_chooseQuantity.getItems().add(10);
     cb_chooseQuantity.getSelectionModel().selectFirst();
+
+    for (ItemType it : ItemType.values()) {
+      cb_itemType.getItems().add(it + " " + it.code);
+    }
+
   }
+
+  @FXML
+  void itemType(MouseEvent event) {
+
+  }
+
 }
+
+
