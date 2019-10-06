@@ -55,7 +55,6 @@ public class Controller{
 
   /**
    * @param event This method below controls the code for the button when pressed.
-   * @author Colby Nicoletti
    */
   @FXML
   void recordProduction(MouseEvent event) {
@@ -66,7 +65,7 @@ public class Controller{
   }
 
   /**
-   * @author Colby Nicoletti The code below controls adding the options into the combo box and
+   * The code below controls adding the options into the combo box and
    * allows it to be editable. It also selects the first option and places that in the combo box
    * when run.
    */

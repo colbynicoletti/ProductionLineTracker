@@ -65,7 +65,6 @@ public class Main extends Application {
     launch(args);
   }
 
-
   public static void executeSql(String sql) {
     try {
       stmt.executeUpdate(sql);
