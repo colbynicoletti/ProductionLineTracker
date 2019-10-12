@@ -2,11 +2,13 @@ package sample;
 
 public class MoviePlayer extends Product implements MultimediaControl {
 
-  private String screenType;
-  private String monitorType;
+  private Screen screen;
+  private MonitorType monitorType;
 
-  public MoviePlayer(String name, String manufacturer, String type) {
-    super(name, manufacturer, type);
+  public MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
+    super(name, manufacturer, "VISUAL");
+    this.screen = screen;
+    this.monitorType = monitorType;
   }
 
   @Override
@@ -16,25 +18,29 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   @Override
   public void play() {
-    System.out.println("Playing");
+    System.out.println("Playing movie");
   }
 
   @Override
   public void stop() {
-    System.out.println("Stopping");
+    System.out.println("Stopping movie");
   }
 
   @Override
   public void previous() {
-    System.out.println("Previous");
+    System.out.println("Previous movie");
   }
 
   @Override
   public void next() {
-    System.out.println("Next");
+    System.out.println("Next movie");
   }
 
-  public String toString(String screenType, String monitorType) {
-    return super.toString() + "Screen Type: " + screenType + "\n" + "Monitor Type: " + monitorType;
+
+  @Override
+  public String toString() {
+    return String.format("%s\nScreen: %s\nMonitor Type: %s", super.toString(), screen, monitorType);
   }
+
+
 }
