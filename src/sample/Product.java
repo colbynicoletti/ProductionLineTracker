@@ -3,12 +3,16 @@ package sample;
 public abstract class Product implements Item {
 
   private int id;
-  private String type;
+  private ItemType type;
   private String manufacturer;
   private String name;
 
   public int getId() {
     return id;
+  }
+
+  public void setId(int id){
+    this.id = id;
   }
 
   public void setName(String name) {
@@ -27,15 +31,15 @@ public abstract class Product implements Item {
     return manufacturer;
   }
 
-  public void setType(String type){
+  public void setType(ItemType type){
     this.type = type;
   }
 
-  public String getType(){
+  public ItemType getType(){
     return type;
   }
 
-  public Product(String name, String manufacturer, String type) {
+  public Product(String name, String manufacturer, ItemType type) {
     this.name = name;
     this.manufacturer = manufacturer;
     this.type = type;

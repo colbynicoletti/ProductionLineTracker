@@ -8,6 +8,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import java.util.Date;
 
 public class Controller{
 
@@ -89,6 +90,8 @@ public class Controller{
       cb_itemType.getItems().add(it + " " + it.code);
     }
 
+    ProductionRecord pr = new ProductionRecord(0,3,"1", new Date());
+    ta_productionLog.setText(pr.toString());
   }
 
   @FXML

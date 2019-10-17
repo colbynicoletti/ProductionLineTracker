@@ -5,8 +5,24 @@ public class MoviePlayer extends Product implements MultimediaControl {
   private Screen screen;
   private MonitorType monitorType;
 
+  public Screen getScreen() {
+    return screen;
+  }
+
+  public void setScreen(Screen screen) {
+    this.screen = screen;
+  }
+
+  public MonitorType getMonitorType() {
+    return monitorType;
+  }
+
+  public void setMonitorType(MonitorType monitorType) {
+    this.monitorType = monitorType;
+  }
+
   public MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
-    super(name, manufacturer, "VISUAL");
+    super(name, manufacturer, ItemType.VISUAL);
     this.screen = screen;
     this.monitorType = monitorType;
   }
