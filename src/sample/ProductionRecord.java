@@ -10,9 +10,9 @@ public class ProductionRecord {
 
   public ProductionRecord(int productID){
     this.productID = productID;
-    productionNumber = 0;
-    serialNumber = "0";
-    Date dateProduced = new Date();
+    this.productionNumber = 0;
+    this.serialNumber = "0";
+    this.dateProduced = new Date();
   }
 
   public ProductionRecord(int productionNumber, int productID, String serialNumber, Date dateProduced){
