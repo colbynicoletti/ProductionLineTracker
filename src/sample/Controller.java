@@ -74,16 +74,7 @@ public class Controller{
   public void initialize() {
     //Adds 1-10 to Combo Box called Choose Quantity
     cb_chooseQuantity.setEditable(true);
-    cb_chooseQuantity.getItems().add(1);
-    cb_chooseQuantity.getItems().add(2);
-    cb_chooseQuantity.getItems().add(3);
-    cb_chooseQuantity.getItems().add(4);
-    cb_chooseQuantity.getItems().add(5);
-    cb_chooseQuantity.getItems().add(6);
-    cb_chooseQuantity.getItems().add(7);
-    cb_chooseQuantity.getItems().add(8);
-    cb_chooseQuantity.getItems().add(9);
-    cb_chooseQuantity.getItems().add(10);
+    cb_chooseQuantity.getItems().addAll(1,2,3,4,5,6,7,8,9,10);
     cb_chooseQuantity.getSelectionModel().selectFirst();
 
     for (ItemType it : ItemType.values()) {
