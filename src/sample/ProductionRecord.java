@@ -7,6 +7,7 @@ public class ProductionRecord {
   private int productID;
   private String serialNumber;
   private Date dateProduced;
+  private String productName;
 
   public ProductionRecord(int productID){
     this.productID = productID;
@@ -20,6 +21,14 @@ public class ProductionRecord {
     this.productID = productID;
     this.serialNumber = serialNumber;
     this.dateProduced = dateProduced;
+  }
+
+  ProductionRecord(Product product, int itemCount){
+    dateProduced = new Date();
+    productName = product.getName();
+
+    serialNumber = product.getManufacturer().substring(0,3) + product.getType().getCode() + String.format("%05d", itemCount);
+
   }
 
   @Override
