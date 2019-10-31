@@ -33,7 +33,7 @@ public class ProductionRecord {
 
   @Override
   public String toString(){
-    return String.format("Prod. Num: %s, Product ID: %s, Serial Num: %s, Date: %s", productionNumber, productID, serialNumber, dateProduced);
+    return String.format("Prod. Num: %s Product ID: %s Serial Num: %s Date: %s", productionNumber, productID, serialNumber, dateProduced);
   }
 
   public int getProductionNumber() {
