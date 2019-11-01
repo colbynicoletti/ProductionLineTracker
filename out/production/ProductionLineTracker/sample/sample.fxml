@@ -43,10 +43,11 @@
             </GridPane>
             <Button fx:id="btn_addProduct" layoutX="458.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#addProduct" text="Add Product" />
             <Label layoutX="23.0" layoutY="181.0" text="Existing Products" />
-            <TableView layoutX="11.0" layoutY="202.0" prefHeight="200.0" prefWidth="576.0">
+            <TableView fx:id="tv_existingProducts" layoutX="11.0" layoutY="202.0" prefHeight="200.0" prefWidth="576.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="tv_existingProducts_productName" prefWidth="175.0" text="Product Name" />
+                <TableColumn fx:id="tv_existingProducts_manufacturer" prefWidth="213.0" text="Manufacturer" />
+                        <TableColumn fx:id="tv_existingProducts_itemType" prefWidth="187.0" text="Item Type" />
               </columns>
             </TableView>
           </children>
@@ -57,11 +58,11 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
           <children>
-            <ListView fx:id="lv_chooseProduct" layoutX="14.0" layoutY="38.0" prefHeight="123.0" prefWidth="567.0" />
+            <ListView fx:id="lv_chooseProduct" layoutX="14.0" layoutY="38.0" prefHeight="268.0" prefWidth="567.0" />
             <Label layoutX="23.0" layoutY="14.0" text="Choose Product" />
-            <Label layoutX="23.0" layoutY="176.0" text="Choose Quantity" />
-            <ComboBox fx:id="cb_chooseQuantity" layoutX="23.0" layoutY="197.0" onMouseClicked="#chooseQuantity" prefHeight="31.0" prefWidth="548.0" />
-            <Button fx:id="btn_recordProduction" layoutX="23.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#recordProduction" text="Record Production" />
+            <Label layoutX="21.0" layoutY="313.0" text="Choose Quantity" />
+            <ComboBox fx:id="cb_chooseQuantity" layoutX="24.0" layoutY="334.0" onMouseClicked="#chooseQuantity" prefHeight="31.0" prefWidth="548.0" />
+            <Button fx:id="btn_recordProduction" layoutX="23.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#recordProduction" text="Record Production" />
           </children>
         </AnchorPane>
       </content>

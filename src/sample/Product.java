@@ -1,11 +1,27 @@
 package sample;
 
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+
 public abstract class Product implements Item {
 
   private int id;
   private ItemType type;
   private String manufacturer;
   private String name;
+
+//  public Product(TextField tf_productName, TextField tf_manufacturer, ChoiceBox<String> cb_itemType) {
+//  }
+
+  public Product(String name, String manufacturer, ItemType type) {
+    this.name = name;
+    this.manufacturer = manufacturer;
+    this.type = type;
+  }
+
+  public Product(String productName) {
+
+  }
 
   public int getId() {
     return id;
@@ -37,12 +53,6 @@ public abstract class Product implements Item {
 
   public ItemType getType(){
     return type;
-  }
-
-  public Product(String name, String manufacturer, ItemType type) {
-    this.name = name;
-    this.manufacturer = manufacturer;
-    this.type = type;
   }
 
   @Override
