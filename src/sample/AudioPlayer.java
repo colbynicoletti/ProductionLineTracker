@@ -94,7 +94,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /**
    * Gives mediaType and audioSpecification
-   * @return String mediaType, String audioSpecification
+   * @return super.toString(), String mediaType, String audioSpecification
    */
   @Override
   public String toString() {
