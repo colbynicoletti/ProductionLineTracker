@@ -8,10 +8,18 @@ public enum ItemType {
 
   public String code;
 
+  /**
+   * Constructor for ItemType that passes String code
+   * @param code
+   */
   ItemType(String code){
     this.code = code;
   }
 
+  /**
+   * Accessor for String code
+   * @return
+   */
   public String getCode() {
     return code;
   }

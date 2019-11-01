@@ -55,8 +55,8 @@ public class Controller {
   private TableColumn<?, ?> tv_existingProducts_itemType;
 
   /**
-   * @param event The method below controls the code for the button when pressed.
-   * @author Colby Nicoletti
+   * MouseEvent event when Add Product button is clicked
+   * @param event
    */
   @FXML
   void addProduct(MouseEvent event) {
@@ -77,6 +77,10 @@ public class Controller {
     tv_existingProducts_productName.setCellValueFactory(new PropertyValueFactory("productName"));
     tv_existingProducts.setItems(observableProduct);
     observableProduct.add(new Product("productName") {
+      /**
+       * Accessor for int getID()
+       * @return getID()
+       */
       @Override
       public int getID() {
         return 0;
@@ -85,19 +89,23 @@ public class Controller {
   }
 
   /**
-   * @param
+   * MouseEvent event for Record Production button
+   * @param event
    */
   @FXML
   void recordProduction(MouseEvent event) {
     System.out.println("\"Record Production\" Button has been clicked.");
   }
 
+  /**
+   * MouseEvent event for Choose Quantity button
+   * @param mouseEvent
+   */
   public void chooseQuantity(MouseEvent mouseEvent) {
   }
 
   /**
-   * The code below controls adding the options into the combo box and allows it to be editable. It
-   * also selects the first option and places that in the combo box when run.
+   * Initialize method, this method controls what get intialized when the program starts
    */
   @FXML
   public void initialize() {
@@ -123,6 +131,10 @@ public class Controller {
 
   } //end intialize
 
+  /**
+   * MouseEvent event for Item Type
+   * @param event
+   */
   @FXML
   void itemType(MouseEvent event) {
 

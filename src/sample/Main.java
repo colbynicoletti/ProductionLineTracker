@@ -14,21 +14,20 @@ import java.sql.Statement;
 
 /**
  * @author Colby Nicoletti
- * @brief
+ * @brief Production Line Tracker. Helps easily make products and keeps track of each product made.
  */
 
 
 public class Main extends Application {
 
-  /**
-   * The starting point of the program.
-   *
-   * @param primaryStage the first thing a user sees.
-   * @throws Exception
-   */
+
   static Statement stmt = null;
 
-
+  /**
+   * Passes Stage primaryStage through start
+   * @param primaryStage the first thing a user sees.
+   * @throws Exception lets compiler know that something it might have trouble accepting is being done.
+   */
   @Override
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -37,11 +36,12 @@ public class Main extends Application {
     primaryStage.show();
   }
 
+  /**
+   * The main section in the program.
+   * This is where the database is connected to the code.
+   * @param args
+   */
   public static void main(String[] args) {
-    /**
-     * @author Colby Nicoletti
-     * The code below connects the database to the code.
-     */
     final String JDBC_DRIVER = "org.h2.Driver";
     final String DB_URL = "jdbc:h2:./res/ProductDB";
 
@@ -65,6 +65,10 @@ public class Main extends Application {
     launch(args);
   }
 
+  /**
+   * Passes String sql through executeSql so that you can save stuff from code to database
+   * @param sql
+   */
   public static void executeSql(String sql) {
     try {
       stmt.executeUpdate(sql);
