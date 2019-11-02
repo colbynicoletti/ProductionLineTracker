@@ -39,13 +39,13 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Constructor for MoviePlayer which passes String name, String manufacturer, Screen screen, MonitorType monitorType
-   * @param name
+   * @param productName
    * @param manufacturer
    * @param screen
    * @param monitorType
    */
-  public MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
-    super(name, manufacturer, ItemType.VISUAL);
+  public MoviePlayer(String productName, String manufacturer, Screen screen, MonitorType monitorType) {
+    super(productName, manufacturer, ItemType.VISUAL);
     this.screen = screen;
     this.monitorType = monitorType;
   }
@@ -57,6 +57,16 @@ public class MoviePlayer extends Product implements MultimediaControl {
   @Override
   public int getID() {
     return 0;
+  }
+
+  @Override
+  public void setName(String name) {
+
+  }
+
+  @Override
+  public String getName() {
+    return null;
   }
 
   /**

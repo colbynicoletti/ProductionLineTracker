@@ -54,6 +54,8 @@ public class Controller {
   @FXML
   private TableColumn<?, ?> tv_existingProducts_itemType;
 
+  ObservableList<Product> observableProduct;
+
   /**
    * MouseEvent event when Add Product button is clicked
    * @param event
@@ -72,21 +74,9 @@ public class Controller {
 //    Product testProduct = new Widget("iPod", "Apple", "AM");
 //    System.out.println(testProduct.toString());
 
-    ArrayList<Product> arrayProduct = new ArrayList<>();
-    ObservableList<Product> observableProduct = FXCollections.observableArrayList(arrayProduct);
-    tv_existingProducts_productName.setCellValueFactory(new PropertyValueFactory("productName"));
-    tv_existingProducts.setItems(observableProduct);
-    observableProduct.add(new Product("productName") {
-      /**
-       * Accessor for int getID()
-       * @return getID()
-       */
-      @Override
-      public int getID() {
-        return 0;
-      }
-    });
-  }
+    observableProduct.add(new Widget(tf_productName.getText(),tf_manufacturer.getText(), ItemType.AUDIO));
+    lv_chooseProduct.getItems().add(String.valueOf(observableProduct));
+} //end addProduct
 
   /**
    * MouseEvent event for Record Production button
@@ -95,7 +85,8 @@ public class Controller {
   @FXML
   void recordProduction(MouseEvent event) {
     System.out.println("\"Record Production\" Button has been clicked.");
-  }
+
+  } //end recordProduction
 
   /**
    * MouseEvent event for Choose Quantity button
@@ -121,14 +112,14 @@ public class Controller {
     ProductionRecord pr = new ProductionRecord(0, 3, "1", new Date());
     ta_productionLog.setText(pr.toString());
 
-//  ArrayList<Bike> bikesAL = new ArrayList<>();
-//  ObservableList<Bike> bikes = FXCollections.observableArrayList(bikesAL);
-//
-//    numGearsCol.setCellValueFactory(new PropertyValueFactory("numGears"));
-//      bikeTable.setItems(bikes);
-//
-//    bikes.add(new Bike(12));
+//    Product prod = new Widget("Apple","iPhone", ItemType.AUDIO); //Test line
 
+    observableProduct = FXCollections.observableArrayList();
+//    observableProduct.add(prod); //Test line
+    tv_existingProducts_productName.setCellValueFactory(new PropertyValueFactory("productName"));
+    tv_existingProducts_manufacturer.setCellValueFactory(new PropertyValueFactory("manufacturer"));
+    tv_existingProducts_itemType.setCellValueFactory(new PropertyValueFactory("itemType"));
+    tv_existingProducts.setItems(observableProduct);
   } //end intialize
 
   /**
@@ -138,7 +129,7 @@ public class Controller {
   @FXML
   void itemType(MouseEvent event) {
 
-  }
-}
+  } //end itemType
+} //end Controller
 
 

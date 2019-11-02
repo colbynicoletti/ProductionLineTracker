@@ -5,33 +5,32 @@ import javafx.scene.control.TextField;
 
 public abstract class Product implements Item {
 
+  protected String productName;
   private int id;
-  private ItemType type;
+  private ItemType itemType;
   private String manufacturer;
-  private String name;
-
-//  public Product(TextField tf_productName, TextField tf_manufacturer, ChoiceBox<String> cb_itemType) {
-//  }
+//private String productName;
 
   /**
    * Contructor for Product that passes String name, String manufacturer, ItemType type as parameters.
-   * @param name
+   * @param productName
    * @param manufacturer
-   * @param type
+   * @param itemType
    */
-  public Product(String name, String manufacturer, ItemType type) {
-    this.name = name;
+  public Product(String productName, String manufacturer, ItemType itemType) {
+    this.productName = productName;
     this.manufacturer = manufacturer;
-    this.type = type;
+    this.itemType = itemType;
+  }
+
+  public Product() {
+
   }
 
   /**
    * Constructor for Product
    * @param productName
    */
-  public Product(String productName) {
-
-  }
 
   /**
    * Accessor for int id
@@ -50,19 +49,19 @@ public abstract class Product implements Item {
   }
 
   /**
-   * Mutator for String name
-   * @param name
+   * Accessor for String productName
+   * @return productName
    */
-  public void setName(String name) {
-    this.name = name;
+  public String getProductName() {
+    return productName;
   }
 
   /**
-   * Accessor for String name
-   * @return name
+   * Mutator for String productName
+   * @param productName
    */
-  public String getName() {
-    return name;
+  public void setProductName(String productName) {
+    this.productName = productName;
   }
 
   /**
@@ -83,18 +82,18 @@ public abstract class Product implements Item {
 
   /**
    * Mutator for ItemType type
-   * @param type
+   * @param itemType
    */
-  public void setType(ItemType type){
-    this.type = type;
+  public void setItemType(ItemType itemType){
+    this.itemType = itemType;
   }
 
   /**
    * Accessor for ItemType type
    * @return type
    */
-  public ItemType getType(){
-    return type;
+  public ItemType getItemType(){
+    return itemType;
   }
 
   /**
@@ -103,9 +102,9 @@ public abstract class Product implements Item {
    */
   @Override
   public String toString() {
-    return "Name: " + name + "\n"
+    return "Name: " + productName + "\n"
         + "Manufacturer: " + manufacturer + "\n"
-        +  "Type: " + type;
+        +  "Type: " + itemType;
   }
 }
 

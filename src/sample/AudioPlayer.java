@@ -40,13 +40,13 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /**
    * Constructor for AudioPlayer that passes String name, String manufacturer, String mediaType and String audioSpecification
-   * @param name
+   * @param productName
    * @param manufacturer
    * @param mediaType
    * @param audioSpecification
    */
-  public AudioPlayer(String name, String manufacturer, String mediaType, String audioSpecification) {
-    super(name, manufacturer, ItemType.VISUAL);
+  public AudioPlayer(String productName, String manufacturer, String mediaType, String audioSpecification) {
+    super(productName, manufacturer, ItemType.VISUAL);
     this.audioSpecification = audioSpecification;
     this.mediaType = mediaType;
   }
@@ -58,6 +58,16 @@ public class AudioPlayer extends Product implements MultimediaControl {
   @Override
   public int getID() {
     return 0;
+  }
+
+  @Override
+  public void setName(String name) {
+
+  }
+
+  @Override
+  public String getName() {
+    return null;
   }
 
   /**
