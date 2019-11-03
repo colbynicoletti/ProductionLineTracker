@@ -1,4 +1,4 @@
-package sample;
+package productLineTracker;
 
 public class MoviePlayer extends Product implements MultimediaControl {
 
@@ -45,10 +45,10 @@ public class MoviePlayer extends Product implements MultimediaControl {
    * Constructor for MoviePlayer which passes String name, String manufacturer, Screen screen,
    * MonitorType monitorType.
    *
-   * @param productName String
+   * @param productName  String
    * @param manufacturer String
-   * @param screen Screen
-   * @param monitorType MonitorType
+   * @param screen       Screen
+   * @param monitorType  MonitorType
    */
   public MoviePlayer(String productName, String manufacturer, Screen screen,
       MonitorType monitorType) {
