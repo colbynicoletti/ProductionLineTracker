@@ -15,9 +15,9 @@ public abstract class Product implements Item {
    * Contructor for Product that passes String name, String manufacturer, ItemType type as
    * parameters.
    *
-   * @param productName
-   * @param manufacturer
-   * @param itemType
+   * @param productName String
+   * @param manufacturer String
+   * @param itemType ItemType
    */
   public Product(String productName, String manufacturer, ItemType itemType) {
     this.productName = productName;
@@ -25,89 +25,80 @@ public abstract class Product implements Item {
     this.itemType = itemType;
   }
 
-  public Product() {
-
-  }
-
   /**
-   * Constructor for Product
-   * @param productName
-   */
-
-  /**
-   * Accessor for int id
+   * Accessor for int id.
    *
-   * @return int id
+   * @return id int
    */
   public int getId() {
     return id;
   }
 
   /**
-   * Mutator for int id
+   * Mutator for int id.
    *
-   * @param id
+   * @param id int
    */
   public void setId(int id) {
     this.id = id;
   }
 
   /**
-   * Accessor for String productName
+   * Accessor for String productName.
    *
-   * @return productName
+   * @return productName String
    */
   public String getProductName() {
     return productName;
   }
 
   /**
-   * Mutator for String productName
+   * Mutator for String productName.
    *
-   * @param productName
+   * @param productName String
    */
   public void setProductName(String productName) {
     this.productName = productName;
   }
 
   /**
-   * Mutator for String manufacturer
+   * Mutator for String manufacturer.
    *
-   * @param manufacturer
+   * @param manufacturer String
    */
   public void setManufacturer(String manufacturer) {
     this.manufacturer = manufacturer;
   }
 
   /**
-   * Accessor for String manufacturer
+   * Accessor for String manufacturer.
    *
-   * @return manufacturer
+   * @return manufacturer String
    */
   public String getManufacturer() {
     return manufacturer;
   }
 
   /**
-   * Mutator for ItemType type
+   * Mutator for ItemType type.
    *
-   * @param itemType
+   * @param itemType ItemType
    */
   public void setItemType(ItemType itemType) {
     this.itemType = itemType;
   }
 
   /**
-   * Accessor for ItemType type
+   * Accessor for ItemType type.
    *
-   * @return type
+   * @return type ItemType
    */
   public ItemType getItemType() {
     return itemType;
   }
 
   /**
-   * Gives name, manufacturer, type
+   * Gives name, manufacturer, type.
    *
    * @return String name, String manufacturer, ItemType type
    */

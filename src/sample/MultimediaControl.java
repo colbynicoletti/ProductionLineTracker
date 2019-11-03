@@ -3,7 +3,7 @@ package sample;
 public interface MultimediaControl {
 
   /**
-   * Calls the methods from MoviePlayer
+   * Calls the methods from MoviePlayer.
    */
   void play();
 

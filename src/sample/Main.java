@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
+ * Start of the program.
  * @author Colby Nicoletti
  * @brief Production Line Tracker. Helps easily make products and keeps track of each product made.
  */
@@ -42,17 +43,17 @@ public class Main extends Application {
    *
    * @param args String
    */
-  public static void main(String[] args) {
-    final String JDBC_DRIVER = "org.h2.Driver";
-    final String DB_URL = "jdbc:h2:./res/ProductDB";
+  public static void main(String[] args) throws SQLException {
+    final String jdbc_driver = "org.h2.Driver";
+    final String db_url = "jdbc:h2:./res/ProductDB";
 
-    final String USER = "";
-    final String PASS = "";
+    final String user = "";
+    final String pass = "";
     Connection conn = null;
 
     try {
-      Class.forName(JDBC_DRIVER);
-      conn = DriverManager.getConnection(DB_URL, USER, PASS);
+      Class.forName(jdbc_driver);
+      conn = DriverManager.getConnection(db_url, user, pass);
       stmt = conn.createStatement();
       System.out.println("Database connection established.");
 
@@ -64,12 +65,14 @@ public class Main extends Application {
     }
 
     launch(args);
+
+    conn.close();
   }
 
   /**
    * Passes String sql through executeSql so that you can save stuff from code to database.
    *
-   * @param sql
+   * @param sql String
    */
   public static void executeSql(String sql) {
     try {

@@ -8,12 +8,11 @@ public class ProductionRecord {
   private int productID;
   private String serialNumber;
   private Date dateProduced;
-  private String productName;
 
   /**
-   * Constructor for ProductionRecord that passes int productID
+   * Constructor for ProductionRecord that passes int productID.
    *
-   * @param productID
+   * @param productID int
    */
   public ProductionRecord(int productID) {
     this.productID = productID;
@@ -24,12 +23,12 @@ public class ProductionRecord {
 
   /**
    * Constructor for ProductionRecord that passes int productionNumber, int productID, String
-   * serialNumber, Date dateProduced
+   * serialNumber, Date dateProduced.
    *
-   * @param productionNumber
-   * @param productID
-   * @param serialNumber
-   * @param dateProduced
+   * @param productionNumber int
+   * @param productID int
+   * @param serialNumber String
+   * @param dateProduced Date
    */
   public ProductionRecord(int productionNumber, int productID, String serialNumber,
       Date dateProduced) {
@@ -40,14 +39,13 @@ public class ProductionRecord {
   }
 
   /**
-   * Constructor for ProductionRecord that passes Product product, int itemCount
+   * Constructor for ProductionRecord that passes Product product, int itemCount.
    *
-   * @param product
-   * @param itemCount
+   * @param product Product
+   * @param itemCount int
    */
   ProductionRecord(Product product, int itemCount) {
     dateProduced = new Date();
-    productName = product.getName();
     serialNumber =
         product.getManufacturer().substring(0, 3) + product.getItemType().getCode() + String
             .format("%05d", itemCount);
@@ -55,9 +53,9 @@ public class ProductionRecord {
   }
 
   /**
-   * Gives int productionNumber, int productID, String serialNumber, Date dateProduced
+   * Gives int productionNumber, int productID, String serialNumber, Date dateProduced.
    *
-   * @return productionNumber, productID, serialNumber, dateProduced
+   * @return productionNumber int , productID int , serialNumber String, dateProduced Date
    */
   @Override
   public String toString() {
@@ -67,74 +65,66 @@ public class ProductionRecord {
   }
 
   /**
-   * Accessor for int productionNumber
+   * Accessor for int productionNumber.
    *
-   * @return productionNumber
+   * @return productionNumber int
    */
   public int getProductionNumber() {
     return productionNumber;
   }
 
   /**
-   * Mutator for int productionNumber
+   * Mutator for int productionNumber.
    *
-   * @param productionNumber
+   * @param productionNumber int
    */
   public void setProductionNumber(int productionNumber) {
     this.productionNumber = productionNumber;
   }
 
   /**
-   * Accessor for int productID
+   * Accessor for int productID.
    *
-   * @return productID
+   * @return productID int
    */
   public int getProductID() {
     return productID;
   }
 
   /**
-   * Mutator for int productID
+   * Mutator for int productID.
    *
-   * @param productID
+   * @param productID int
    */
   public void setProductID(int productID) {
     this.productID = productID;
   }
 
   /**
-   * Accessor for String serialNumber
+   * Accessor for String serialNumber.
    *
-   * @return serialNumber
+   * @return serialNumber String
    */
   public String getSerialNumber() {
     return serialNumber;
   }
 
   /**
-   * Mutator for String serialNumber
+   * Mutator for String serialNumber.
    *
-   * @param serialNumber
+   * @param serialNumber String
    */
   public void setSerialNumber(String serialNumber) {
     this.serialNumber = serialNumber;
   }
 
   /**
-   * Accessor for Date dateProduced
+   * Accessor for Date dateProduced.
    *
-   * @return dateProduced
+   * @return dateProduced Date
    */
   public Date getDateProduced() {
     return dateProduced;
   }
 
-  /**
-   * Mutator for Date dateProduced
-   *
-   * @param dateProduced
-   */
-  public void setDateProduced(Date dateProduced) {
-    this.dateProduced = dateProduced;
-  }
 }

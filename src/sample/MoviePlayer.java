@@ -6,36 +6,36 @@ public class MoviePlayer extends Product implements MultimediaControl {
   private MonitorType monitorType;
 
   /**
-   * Accessor for Screen screen
+   * Accessor for Screen screen.
    *
-   * @return screen
+   * @return screen Screen
    */
   public Screen getScreen() {
     return screen;
   }
 
   /**
-   * Mutator for Screen screen
+   * Mutator for Screen screen.
    *
-   * @param screen
+   * @param screen Screen
    */
   public void setScreen(Screen screen) {
     this.screen = screen;
   }
 
   /**
-   * Accessor for MonitorType monitorType
+   * Accessor for MonitorType monitorType.
    *
-   * @return monitorType
+   * @return monitorType MonitorType
    */
   public MonitorType getMonitorType() {
     return monitorType;
   }
 
   /**
-   * Mutator for MonitorType monitorType
+   * Mutator for MonitorType monitorType.
    *
-   * @param monitorType
+   * @param monitorType MonitorType
    */
   public void setMonitorType(MonitorType monitorType) {
     this.monitorType = monitorType;
@@ -43,12 +43,12 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Constructor for MoviePlayer which passes String name, String manufacturer, Screen screen,
-   * MonitorType monitorType
+   * MonitorType monitorType.
    *
-   * @param productName
-   * @param manufacturer
-   * @param screen
-   * @param monitorType
+   * @param productName String
+   * @param manufacturer String
+   * @param screen Screen
+   * @param monitorType MonitorType
    */
   public MoviePlayer(String productName, String manufacturer, Screen screen,
       MonitorType monitorType) {
@@ -58,9 +58,9 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Accessor for int ID
+   * Accessor for int ID.
    *
-   * @return getID
+   * @return getID int
    */
   @Override
   public int getID() {
@@ -78,7 +78,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that movie player is playing
+   * Method to show that movie player is playing.
    */
   @Override
   public void play() {
@@ -86,7 +86,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that movie player is stopping
+   * Method to show that movie player is stopping.
    */
   @Override
   public void stop() {
@@ -94,7 +94,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that movie player is choosing the previous movie
+   * Method to show that movie player is choosing the previous movie.
    */
   @Override
   public void previous() {
@@ -102,7 +102,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that movie player is choosing the next movie
+   * Method to show that movie player is choosing the next movie.
    */
   @Override
   public void next() {
@@ -111,13 +111,13 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
 
   /**
-   * Gives Screen screen and MonitorType monitorType
+   * Gives Screen screen and MonitorType monitorType.
    *
    * @return super.toString(), screen, monitorType
    */
   @Override
   public String toString() {
-    return String.format("%s\nScreen: %s\nMonitor Type: %s", super.toString(), screen, monitorType);
+    return String.format("%s%nScreen: %s%nMonitor Type: %s", super.toString(), screen, monitorType);
   }
 
 
