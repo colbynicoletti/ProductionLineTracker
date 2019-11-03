@@ -6,7 +6,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
   private String mediaType;
 
   /**
-   *  Accessor for String audioSpecification
+   * Accessor for String audioSpecification.
+   *
    * @return audioSpecification
    */
   public String getAudioSpecification() {
@@ -14,15 +15,17 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   *  Mutator for String audioSpecification
-   * @param audioSpecification
+   * Mutator for String audioSpecification.
+   *
+   * @param audioSpecification String
    */
   public void setAudioSpecification(String audioSpecification) {
     this.audioSpecification = audioSpecification;
   }
 
   /**
-   * Accessor for String mediaType
+   * Accessor for String mediaType.
+   *
    * @return mediaType
    */
   public String getMediaType() {
@@ -30,29 +33,33 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
+   * Mutator for String mediaType.
    *
-   * Mutator for String mediaType
-   * @param mediaType
+   * @param mediaType String
    */
   public void setMediaType(String mediaType) {
     this.mediaType = mediaType;
   }
 
   /**
-   * Constructor for AudioPlayer that passes String name, String manufacturer, String mediaType and String audioSpecification
-   * @param productName
-   * @param manufacturer
-   * @param mediaType
-   * @param audioSpecification
+   * Constructor for AudioPlayer that passes String name, String manufacturer, String mediaType and
+   * String audioSpecification.
+   *
+   * @param productName String
+   * @param manufacturer String
+   * @param mediaType String
+   * @param audioSpecification String
    */
-  public AudioPlayer(String productName, String manufacturer, String mediaType, String audioSpecification) {
+  public AudioPlayer(String productName, String manufacturer, String mediaType,
+      String audioSpecification) {
     super(productName, manufacturer, ItemType.VISUAL);
     this.audioSpecification = audioSpecification;
     this.mediaType = mediaType;
   }
 
   /**
-   * Accessor for int getID()
+   * Accessor for int ID.
+   *
    * @return 0
    */
   @Override
@@ -71,7 +78,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that audio player is playing
+   * Method to show that audio player is playing.
    */
   @Override
   public void play() {
@@ -79,7 +86,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that audio player is stopping
+   * Method to show that audio player is stopping.
    */
   @Override
   public void stop() {
@@ -87,7 +94,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that audio player is choosing the next song
+   * Method to show that audio player is choosing the next song.
    */
   @Override
   public void next() {
@@ -95,7 +102,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Method to show that audio player is choosing the previous song
+   * Method to show that audio player is choosing the previous song.
    */
   @Override
   public void previous() {
@@ -103,7 +110,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Gives mediaType and audioSpecification
+   * Gives mediaType and audioSpecification.
+   *
    * @return super.toString(), String mediaType, String audioSpecification
    */
   @Override

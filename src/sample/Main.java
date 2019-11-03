@@ -1,16 +1,15 @@
 package sample;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * @author Colby Nicoletti
@@ -24,9 +23,11 @@ public class Main extends Application {
   static Statement stmt = null;
 
   /**
-   * Passes Stage primaryStage through start
+   * Passes Stage primaryStage through start.
+   *
    * @param primaryStage the first thing a user sees.
-   * @throws Exception lets compiler know that something it might have trouble accepting is being done.
+   * @throws Exception lets compiler know that something it might have trouble accepting is being
+   *                   done.
    */
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -37,9 +38,9 @@ public class Main extends Application {
   }
 
   /**
-   * The main section in the program.
-   * This is where the database is connected to the code.
-   * @param args
+   * The main section in the program. This is where the database is connected to the code.
+   *
+   * @param args String
    */
   public static void main(String[] args) {
     final String JDBC_DRIVER = "org.h2.Driver";
@@ -66,7 +67,8 @@ public class Main extends Application {
   }
 
   /**
-   * Passes String sql through executeSql so that you can save stuff from code to database
+   * Passes String sql through executeSql so that you can save stuff from code to database.
+   *
    * @param sql
    */
   public static void executeSql(String sql) {

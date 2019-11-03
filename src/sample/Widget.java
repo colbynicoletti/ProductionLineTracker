@@ -1,7 +1,8 @@
 package sample;
 
 class Widget extends Product {
-  Widget(String productName, String manufacturer, ItemType itemType){
+
+  Widget(String productName, String manufacturer, ItemType itemType) {
     super(productName, manufacturer, itemType);
   }
 

@@ -40,7 +40,9 @@ public class Screen implements ScreenSpec {
   }
 
   public String toString(){
-    return String.format("Resolution: %s\nRefresh rate: %s\nResponse time: %s", resolution, refreshRate, responseTime);
+    return String
+        .format("Resolution: %s\nRefresh rate: %s\nResponse time: %s", resolution, refreshRate,
+            responseTime);
   }
 
 }

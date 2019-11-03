@@ -9,10 +9,12 @@ public abstract class Product implements Item {
   private int id;
   private ItemType itemType;
   private String manufacturer;
-//private String productName;
+  //private String productName;
 
   /**
-   * Contructor for Product that passes String name, String manufacturer, ItemType type as parameters.
+   * Contructor for Product that passes String name, String manufacturer, ItemType type as
+   * parameters.
+   *
    * @param productName
    * @param manufacturer
    * @param itemType
@@ -34,6 +36,7 @@ public abstract class Product implements Item {
 
   /**
    * Accessor for int id
+   *
    * @return int id
    */
   public int getId() {
@@ -42,14 +45,16 @@ public abstract class Product implements Item {
 
   /**
    * Mutator for int id
+   *
    * @param id
    */
-  public void setId(int id){
+  public void setId(int id) {
     this.id = id;
   }
 
   /**
    * Accessor for String productName
+   *
    * @return productName
    */
   public String getProductName() {
@@ -58,6 +63,7 @@ public abstract class Product implements Item {
 
   /**
    * Mutator for String productName
+   *
    * @param productName
    */
   public void setProductName(String productName) {
@@ -66,6 +72,7 @@ public abstract class Product implements Item {
 
   /**
    * Mutator for String manufacturer
+   *
    * @param manufacturer
    */
   public void setManufacturer(String manufacturer) {
@@ -74,6 +81,7 @@ public abstract class Product implements Item {
 
   /**
    * Accessor for String manufacturer
+   *
    * @return manufacturer
    */
   public String getManufacturer() {
@@ -82,29 +90,32 @@ public abstract class Product implements Item {
 
   /**
    * Mutator for ItemType type
+   *
    * @param itemType
    */
-  public void setItemType(ItemType itemType){
+  public void setItemType(ItemType itemType) {
     this.itemType = itemType;
   }
 
   /**
    * Accessor for ItemType type
+   *
    * @return type
    */
-  public ItemType getItemType(){
+  public ItemType getItemType() {
     return itemType;
   }
 
   /**
    * Gives name, manufacturer, type
+   *
    * @return String name, String manufacturer, ItemType type
    */
   @Override
   public String toString() {
     return "Name: " + productName + "\n"
         + "Manufacturer: " + manufacturer + "\n"
-        +  "Type: " + itemType;
+        + "Type: " + itemType;
   }
 }
 

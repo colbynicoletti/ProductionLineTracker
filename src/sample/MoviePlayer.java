@@ -7,6 +7,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Accessor for Screen screen
+   *
    * @return screen
    */
   public Screen getScreen() {
@@ -15,6 +16,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Mutator for Screen screen
+   *
    * @param screen
    */
   public void setScreen(Screen screen) {
@@ -23,6 +25,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Accessor for MonitorType monitorType
+   *
    * @return monitorType
    */
   public MonitorType getMonitorType() {
@@ -31,6 +34,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Mutator for MonitorType monitorType
+   *
    * @param monitorType
    */
   public void setMonitorType(MonitorType monitorType) {
@@ -38,13 +42,16 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * Constructor for MoviePlayer which passes String name, String manufacturer, Screen screen, MonitorType monitorType
+   * Constructor for MoviePlayer which passes String name, String manufacturer, Screen screen,
+   * MonitorType monitorType
+   *
    * @param productName
    * @param manufacturer
    * @param screen
    * @param monitorType
    */
-  public MoviePlayer(String productName, String manufacturer, Screen screen, MonitorType monitorType) {
+  public MoviePlayer(String productName, String manufacturer, Screen screen,
+      MonitorType monitorType) {
     super(productName, manufacturer, ItemType.VISUAL);
     this.screen = screen;
     this.monitorType = monitorType;
@@ -52,6 +59,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Accessor for int ID
+   *
    * @return getID
    */
   @Override
@@ -104,6 +112,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   /**
    * Gives Screen screen and MonitorType monitorType
+   *
    * @return super.toString(), screen, monitorType
    */
   @Override
