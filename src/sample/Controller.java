@@ -40,7 +40,7 @@ public class Controller {
   private TextArea ta_productionLog;
 
   @FXML
-  private ChoiceBox<String> cb_itemType;
+  private ChoiceBox<ItemType> cb_itemType;
 
   @FXML
   private TableView<Product> tv_existingProducts;
@@ -64,7 +64,7 @@ public class Controller {
   void addProduct(MouseEvent event) {
     String productName = tf_productName.getText();
     String manufacturer = tf_manufacturer.getText();
-    String itemType = cb_itemType.getValue();
+    ItemType itemType = cb_itemType.getValue();
 //    String sql =
 //        "INSERT INTO Product(type, manufacturer, name) VALUES ('" + itemType + "', '" + manufacturer
 //            + "', '"
@@ -74,7 +74,7 @@ public class Controller {
 //    Product testProduct = new Widget("iPod", "Apple", "AM");
 //    System.out.println(testProduct.toString());
 
-    observableProduct.add(new Widget(tf_productName.getText(),tf_manufacturer.getText(), ItemType.AUDIO));
+    observableProduct.add(new Widget(productName, manufacturer, itemType));
     lv_chooseProduct.getItems().add(String.valueOf(observableProduct));
 } //end addProduct
 
@@ -106,16 +106,13 @@ public class Controller {
     cb_chooseQuantity.getSelectionModel().selectFirst();
 
     for (ItemType it : ItemType.values()) {
-      cb_itemType.getItems().add(it + " " + it.code);
+      cb_itemType.getItems().add(it);
     }
 
     ProductionRecord pr = new ProductionRecord(0, 3, "1", new Date());
     ta_productionLog.setText(pr.toString());
 
-//    Product prod = new Widget("Apple","iPhone", ItemType.AUDIO); //Test line
-
     observableProduct = FXCollections.observableArrayList();
-//    observableProduct.add(prod); //Test line
     tv_existingProducts_productName.setCellValueFactory(new PropertyValueFactory("productName"));
     tv_existingProducts_manufacturer.setCellValueFactory(new PropertyValueFactory("manufacturer"));
     tv_existingProducts_itemType.setCellValueFactory(new PropertyValueFactory("itemType"));

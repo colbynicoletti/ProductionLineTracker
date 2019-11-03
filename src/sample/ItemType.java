@@ -23,4 +23,4 @@ public enum ItemType {
   public String getCode() {
     return code;
   }
-}
+} //end ItemType
