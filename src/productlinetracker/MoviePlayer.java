@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 public class MoviePlayer extends Product implements MultimediaControl {
 

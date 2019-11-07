@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 class Widget extends Product {
 

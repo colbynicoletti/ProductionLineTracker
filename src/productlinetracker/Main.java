@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -51,6 +51,7 @@ public class Main extends Application {
     final String pass = "";
     Connection conn = null;
 
+    System.out.println("Attempting to connect to database.");
     try {
       Class.forName(jdbc_driver);
       conn = DriverManager.getConnection(db_url, user, pass);

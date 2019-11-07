@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 public class Screen implements ScreenSpec {
 

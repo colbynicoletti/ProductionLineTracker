@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 import java.util.Date;
 import javafx.collections.FXCollections;
@@ -27,10 +27,10 @@ public class Controller {
   private Button btn_addProduct;
 
   @FXML
-  private ListView<String> lv_chooseProduct;
+  private ListView<Product> lv_chooseProduct;
 
   @FXML
-  private ComboBox<Integer> cb_chooseQuantity;
+  private ComboBox<String> cb_chooseQuantity;
 
   @FXML
   private Button btn_recordProduction;
@@ -63,11 +63,13 @@ public class Controller {
   @FXML
   void addProduct(MouseEvent event) {
     String productName = tf_productName.getText();
+    tf_productName.clear();
     String manufacturer = tf_manufacturer.getText();
+    tf_manufacturer.clear();
     ItemType itemType = cb_itemType.getValue();
 
     observableProduct.add(new Widget(productName, manufacturer, itemType));
-    lv_chooseProduct.getItems().add(String.valueOf(observableProduct));
+    lv_chooseProduct.getItems().addAll(observableProduct);
   } //end addProduct
 
   /**
@@ -78,6 +80,17 @@ public class Controller {
   @FXML
   void recordProduction(MouseEvent event) {
     System.out.println("\"Record Production\" Button has been clicked.");
+    System.out.println();
+    int t = Integer.parseInt(cb_chooseQuantity.getValue());
+    System.out.println("The value is " + t);
+    for(int i = 0; i < t; i++){
+      Product p = lv_chooseProduct.getSelectionModel().getSelectedItem();
+      ProductionRecord pr = new ProductionRecord(p,i);
+      ta_productionLog.appendText(pr.toString() + "\n");
+      //Prod. Num: 2 Product ID: iPhone Serial Num: AppAU00000 Date: Wed Nov 06 17:52:48 EST 2019
+
+    }
+
 
   } //end recordProduction
 
@@ -96,15 +109,13 @@ public class Controller {
   public void initialize() {
     //Adds 1-10 to Combo Box called Choose Quantity
     cb_chooseQuantity.setEditable(true);
-    cb_chooseQuantity.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    cb_chooseQuantity.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
     cb_chooseQuantity.getSelectionModel().selectFirst();
 
     for (ItemType it : ItemType.values()) {
       cb_itemType.getItems().add(it);
     }
 
-    ProductionRecord pr = new ProductionRecord(0, 3, "1", new Date());
-    ta_productionLog.setText(pr.toString());
 
     observableProduct = FXCollections.observableArrayList();
     tv_existingProducts_productName.setCellValueFactory(new PropertyValueFactory("productName"));

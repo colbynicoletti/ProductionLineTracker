@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 public class AudioPlayer extends Product implements MultimediaControl {
 

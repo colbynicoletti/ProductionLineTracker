@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 public enum MonitorType {
   LCD,

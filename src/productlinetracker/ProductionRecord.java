@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 import java.util.Date;
 
@@ -8,6 +8,7 @@ public class ProductionRecord {
   private int productID;
   private String serialNumber;
   private Date dateProduced;
+  Product p;
 
   /**
    * Constructor for ProductionRecord that passes int productID.
@@ -49,6 +50,7 @@ public class ProductionRecord {
     serialNumber =
         product.getManufacturer().substring(0, 3) + product.getItemType().getCode() + String
             .format("%05d", itemCount);
+    this.p = product;
 
   }
 
@@ -60,7 +62,7 @@ public class ProductionRecord {
   @Override
   public String toString() {
     return String
-        .format("Prod. Num: %s Product ID: %s Serial Num: %s Date: %s", productionNumber, productID,
+        .format("Prod. Num: %s Product ID: %s Serial Num: %s Date: %s", productionNumber, p.productName,
             serialNumber, dateProduced);
   }
 

@@ -1,4 +1,4 @@
-package productLineTracker;
+package productlinetracker;
 
 enum ItemType {
   AUDIO("AU"),
