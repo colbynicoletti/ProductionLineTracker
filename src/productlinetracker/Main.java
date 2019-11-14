@@ -1,9 +1,12 @@
 package productlinetracker;
 
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,6 +25,8 @@ public class Main extends Application {
 
 
   static Statement stmt = null;
+  static Connection conn = null;
+  static PreparedStatement preparedStatement;
 
   /**
    * Passes Stage primaryStage through start.
@@ -48,8 +53,15 @@ public class Main extends Application {
     final String db_url = "jdbc:h2:./res/ProductDB";
 
     final String user = "";
-    final String pass = "";
-    Connection conn = null;
+    String pass = "";
+
+    try{
+      Properties prop = new Properties();
+      prop.load(new FileInputStream("res/properties"));
+      pass = prop.getProperty("password");
+    } catch (Exception e){
+      System.out.println("Error with database password.");
+    }
 
     System.out.println("Attempting to connect to database.");
     try {
@@ -73,11 +85,16 @@ public class Main extends Application {
   /**
    * Passes String sql through executeSql so that you can save stuff from code to database.
    *
-   * @param sql String
+   * @param
    */
-  public static void executeSql(String sql) {
+  public static void executeSql(String productName, String manufacturer, ItemType itemType) {
     try {
-      stmt.executeUpdate(sql);
+      String sql = "INSERT INTO PRODUCT(NAME, MANUFACTURER, TYPE) VALUES (?,?,?)";
+      preparedStatement = conn.prepareStatement(sql);
+      preparedStatement.setString(1,productName);
+      preparedStatement.setString(2, manufacturer);
+      preparedStatement.setString(3, itemType.toString());
+      preparedStatement.executeUpdate();
     } catch (Exception e) {
       e.printStackTrace();
     }

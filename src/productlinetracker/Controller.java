@@ -53,7 +53,7 @@ public class Controller {
   @FXML
   private TableColumn<?, ?> tv_existingProducts_itemType;
 
-  ObservableList<Product> observableProduct;
+  ObservableList<Product> observableProduct = FXCollections.observableArrayList();
 
   /**
    * MouseEvent event when Add Product button is clicked.
@@ -70,6 +70,8 @@ public class Controller {
 
     observableProduct.add(new Widget(productName, manufacturer, itemType));
     lv_chooseProduct.getItems().addAll(observableProduct);
+
+    Main.executeSql(productName, manufacturer, itemType);
   } //end addProduct
 
   /**
@@ -116,8 +118,6 @@ public class Controller {
       cb_itemType.getItems().add(it);
     }
 
-
-    observableProduct = FXCollections.observableArrayList();
     tv_existingProducts_productName.setCellValueFactory(new PropertyValueFactory("productName"));
     tv_existingProducts_manufacturer.setCellValueFactory(new PropertyValueFactory("manufacturer"));
     tv_existingProducts_itemType.setCellValueFactory(new PropertyValueFactory("itemType"));
@@ -133,6 +133,10 @@ public class Controller {
   void itemType(MouseEvent event) {
 
   } //end itemType
+
+  public void loadProductList(){
+
+  }
 } //end Controller
 
 
