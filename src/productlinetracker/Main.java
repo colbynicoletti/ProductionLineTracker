@@ -49,6 +49,11 @@ public class Main extends Application {
    * @param args String
    */
   public static void main(String[] args) throws SQLException {
+
+    launch(args);
+  }
+
+  public static Connection connectDb() {
     final String jdbc_driver = "org.h2.Driver";
     final String db_url = "jdbc:h2:./res/ProductDB";
 
@@ -76,10 +81,7 @@ public class Main extends Application {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-
-    launch(args);
-
-    conn.close();
+    return conn;
   }
 
   /**

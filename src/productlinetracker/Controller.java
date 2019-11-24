@@ -1,6 +1,8 @@
 package productlinetracker;
 
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -54,7 +56,6 @@ public class Controller {
   private TableColumn<?, ?> tv_existingProducts_itemType;
 
   ObservableList<Product> observableProduct = FXCollections.observableArrayList();
-
   /**
    * MouseEvent event when Add Product button is clicked.
    *
@@ -71,7 +72,9 @@ public class Controller {
     observableProduct.add(new Widget(productName, manufacturer, itemType));
     lv_chooseProduct.getItems().addAll(observableProduct);
 
+
     Main.executeSql(productName, manufacturer, itemType);
+
   } //end addProduct
 
   /**
@@ -106,10 +109,12 @@ public class Controller {
 
   /**
    * Initialize method, this method controls what get intialized when the program starts.
+   * @return
    */
   @FXML
   public void initialize() {
     //Adds 1-10 to Combo Box called Choose Quantity
+    observableProduct.clear();
     cb_chooseQuantity.setEditable(true);
     cb_chooseQuantity.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
     cb_chooseQuantity.getSelectionModel().selectFirst();
@@ -119,9 +124,13 @@ public class Controller {
     }
 
     tv_existingProducts_productName.setCellValueFactory(new PropertyValueFactory("productName"));
-    tv_existingProducts_manufacturer.setCellValueFactory(new PropertyValueFactory("manufacturer"));
+     tv_existingProducts_manufacturer.setCellValueFactory(new PropertyValueFactory("manufacturer"));
     tv_existingProducts_itemType.setCellValueFactory(new PropertyValueFactory("itemType"));
     tv_existingProducts.setItems(observableProduct);
+
+    loadProductList();
+    lv_chooseProduct.getItems().addAll(observableProduct);
+
   } //end intialize
 
   /**
@@ -134,9 +143,35 @@ public class Controller {
 
   } //end itemType
 
-  public void loadProductList(){
 
-  }
+
+  public void loadProductList(){
+    Connection conn = Main.connectDb();
+
+    try{
+      String sql = "SELECT * FROM PRODUCT";
+      PreparedStatement prepStatement = conn.prepareStatement(sql);
+      ResultSet rs = prepStatement.executeQuery();
+
+      while(rs.next()){
+        int id = rs.getInt("ID");
+        String productName = rs.getString("NAME");
+        String code = rs.getString("TYPE");
+        String manufacturer = rs.getString("MANUFACTURER");
+
+        for(ItemType itemType : ItemType.values()){
+//          System.out.println(itemType.name() + " " + code);
+          if (itemType.name().equals(code)){
+            observableProduct.add(new Widget(productName, manufacturer, itemType));
+          } // end if
+        } //end for
+      } //end while
+      tv_existingProducts.getItems().addAll(observableProduct);
+      System.out.println(observableProduct);
+    } catch (Exception e){
+
+    }
+  } //end loadProductList
 } //end Controller
 
 
