@@ -70,7 +70,9 @@ public class Controller {
     ItemType itemType = cb_itemType.getValue();
 
     observableProduct.add(new Widget(productName, manufacturer, itemType));
+    lv_chooseProduct.getItems().clear();
     lv_chooseProduct.getItems().addAll(observableProduct);
+
 
 
     Main.executeSql(productName, manufacturer, itemType);
@@ -113,8 +115,8 @@ public class Controller {
    */
   @FXML
   public void initialize() {
+
     //Adds 1-10 to Combo Box called Choose Quantity
-    observableProduct.clear();
     cb_chooseQuantity.setEditable(true);
     cb_chooseQuantity.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
     cb_chooseQuantity.getSelectionModel().selectFirst();
