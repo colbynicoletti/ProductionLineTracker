@@ -1,8 +1,14 @@
 package productlinetracker;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -56,6 +62,12 @@ public class Controller {
   private TableColumn<?, ?> tv_existingProducts_itemType;
 
   ObservableList<Product> observableProduct = FXCollections.observableArrayList();
+
+  ArrayList<ProductionRecord> recordArrayList;
+
+  Statement stmt = null;
+
+  Connection conn = null;
   /**
    * MouseEvent event when Add Product button is clicked.
    *
@@ -86,6 +98,7 @@ public class Controller {
    */
   @FXML
   void recordProduction(MouseEvent event) {
+    ta_productionLog.clear();
     System.out.println("\"Record Production\" Button has been clicked.");
     System.out.println();
     int t = Integer.parseInt(cb_chooseQuantity.getValue());
@@ -96,10 +109,18 @@ public class Controller {
       ta_productionLog.appendText(pr.toString() + "\n");
       //Prod. Num: 2 Product ID: iPhone Serial Num: AppAU00000 Date: Wed Nov 06 17:52:48 EST 2019
 
+//      loadProductionLog();
+//      showProduction();
     }
 
 
   } //end recordProduction
+
+  public void showProduction(){
+    for(int i=0;i<recordArrayList.size();i++){
+      ta_productionLog.appendText(recordArrayList.get(i).toString() + "\n");
+    } // end for
+  } //end showProduction
 
   /**
    * MouseEvent event for Choose Quantity button.
@@ -174,6 +195,33 @@ public class Controller {
 
     }
   } //end loadProductList
+
+  public void loadProductionLog() throws SQLException {
+    recordArrayList = new ArrayList<>();
+    String sql = "SELECT * FROM PRODUCTIONRECORD";
+    ResultSet rs = stmt.executeQuery(sql);
+    while(rs.next()){
+      int productNumber = rs.getInt(1);
+      String productName = rs.getString(2);
+      String serialNumber = rs.getString(3);
+      Date dateProduced = new Date(rs.getTimestamp(4).getTime());
+      ProductionRecord addToProductionLog = new ProductionRecord(productNumber, productName, serialNumber, dateProduced);
+      recordArrayList.add(addToProductionLog);
+    } //end while
+  } //end loadProductionLog
+
+  public void addToProductionDB(ArrayList<ProductionRecord> productionRecordArrayList)
+      throws SQLException {
+    String insertProduct = "INSERT INTO PRODUCTIONRECORD(" + "productName, serialNumber, dateProduced) VALUES (?,?,?,?)";
+    PreparedStatement recordToDB = conn.prepareStatement(insertProduct);
+    for(ProductionRecord record : recordArrayList){
+      recordToDB.setString(1, record.getProductName());
+      recordToDB.setString(2, record.getSerialNumber());
+      recordToDB.setTimestamp(3, new Timestamp(record.getDateProduced().getTime()));
+//      recordToDB.setString(4, ) Employee one
+      recordToDB.executeUpdate();
+    }
+  }
 } //end Controller
 
 

@@ -8,6 +8,16 @@ public class ProductionRecord {
   private int productID;
   private String serialNumber;
   private Date dateProduced;
+
+  public String getProductName() {
+    return productName;
+  }
+
+  public void setProductName(String productName) {
+    this.productName = productName;
+  }
+
+  private String productName;
   Product p;
 
   /**
@@ -27,14 +37,14 @@ public class ProductionRecord {
    * serialNumber, Date dateProduced.
    *
    * @param productionNumber int
-   * @param productID        int
+   * @param productName        int
    * @param serialNumber     String
    * @param dateProduced     Date
    */
-  public ProductionRecord(int productionNumber, int productID, String serialNumber,
+  public ProductionRecord(int productionNumber, String productName, String serialNumber,
       Date dateProduced) {
     this.productionNumber = productionNumber;
-    this.productID = productID;
+    this.productName = productName;
     this.serialNumber = serialNumber;
     this.dateProduced = dateProduced;
   }
@@ -53,6 +63,7 @@ public class ProductionRecord {
     this.p = product;
 
   }
+
 
   /**
    * Gives int productionNumber, int productID, String serialNumber, Date dateProduced.
