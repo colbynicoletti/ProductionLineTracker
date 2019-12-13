@@ -17,7 +17,6 @@ import javafx.stage.Stage;
  * Start of the program.
  *
  * @author Colby Nicoletti
- * @brief Production Line Tracker. Helps easily make products and keeps track of each product made.
  */
 
 
@@ -87,7 +86,7 @@ public class Main extends Application {
   /**
    * Passes String sql through executeSql so that you can save stuff from code to database.
    *
-   * @param
+   * @param productName String, manufacturer String, itemType ItemType
    */
   public static void executeSql(String productName, String manufacturer, ItemType itemType) {
     try {

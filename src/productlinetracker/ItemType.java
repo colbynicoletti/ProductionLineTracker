@@ -20,7 +20,7 @@ enum ItemType {
   /**
    * Accessor for String code.
    *
-   * @return
+   * @return code String
    */
   public String getCode() {
     return code;

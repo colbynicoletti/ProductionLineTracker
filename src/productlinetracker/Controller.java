@@ -132,7 +132,6 @@ public class Controller {
 
   /**
    * Initialize method, this method controls what get intialized when the program starts.
-   * @return
    */
   @FXML
   public void initialize() {
