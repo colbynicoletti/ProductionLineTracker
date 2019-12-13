@@ -321,7 +321,7 @@ Java Documentation: [Java Doc](https://colbynicoletti.github.com/ProductionLineT
 
 Class Diagram:
 
-![Class Diagram]()
+![Class Diagram](https://github.com/colbynicoletti/ProductionLineTracker/blob/master/src/productlinetracker/ClassDiagram.png)
 
 DataBase Visualization:
 
