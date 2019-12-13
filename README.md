@@ -325,7 +325,7 @@ Class Diagram:
 
 DataBase Visualization:
 
-![DataBase Tables])
+![DataBase Tables](https://github.com/colbynicoletti/ProductionLineTracker/blob/master/src/productlinetracker/DB.jpg)
 
 Demonstration:
 
